@@ -1,36 +1,37 @@
+## Notes from workshop at Akamai Office 
+
 Find blocking scripts, make things fast (no throttle) to rule out network issues, so can focus on script evaluation
 FID first input delay - can be used to check if user is being delayed by a slow script execution
 
 From Networking discussion - 
- - write a script that loads non critical scripts, after 5 seconds - if these scripts are the hindrance to TTI
- - visual optimizer to find duplicate in the bundle
- - talking to 3rd party isn't easy - onetrust were not friendly with thesun
- - hosting 3rd party script on our domain will reduce round trip time
 
-
+- write a script that loads non critical scripts, after 5 seconds - if these scripts are the hindrance to TTI
+- visual optimizer to find duplicate in the bundle
+- talking to 3rd party isn't easy - onetrust were not friendly with thesun
+- hosting 3rd party script on our domain will reduce round trip time
 
 =============================================
-=============================================
 
+## Other Random Notes
 
-Device Market share uk - android ios 50% appx
-cpu, battery other factors
-bandwidth isn't the bottleneck (often)
-latency (rtt) has huge impact - varies by distance, other factors - router, network
-TLS - smaller certificate the chain, the better - qualys ssl checker
-ocsp stapling - workaround ocsp checks - akamai supports it - pick your certificate provider carefully
-hsts, but can break site (if resource on http) - hstspreload.org
-fonts - prioritasation
-http 1.1 does keep alive by default
-high performance browser networking - llyas
-tcp - starts slower - small no. of packets 15KB in one rtt
-Initial congetion window - For better rendering - send your CRT resources within 15K, although some CDN have higher limits
-reduce rtt as much - brotli - another 20% compression - more cpu though
-minification - 5% benefit
-priority - download - hueristics based - higher in <head>, images - low, fonts - higher. Diff browser have different, also on http 1 or 2, in 2 hints given - server decides
-no preload - @import in css, document.write of external resource
-initial congestion window akamai
-css - mdeia query 
+- Device Market share uk - android ios 50% appx
+- cpu, battery other factors
+- bandwidth isn't the bottleneck (often)
+- latency (rtt) has huge impact - varies by distance, other factors - router, - network
+- TLS - smaller certificate the chain, the better - qualys ssl checker
+- ocsp stapling - workaround ocsp checks - akamai supports it - pick your - certificate provider carefully
+- hsts, but can break site (if resource on http) - hstspreload.org
+- fonts - prioritasation
+- http 1.1 does keep alive by default
+- high performance browser networking - llyas
+- tcp - starts slower - small no. of packets 15KB in one rtt
+- Initial congetion window - For better rendering - send your CRT resources - within 15K, although some CDN have higher limits
+- reduce rtt as much - brotli - another 20% compression - more cpu though
+- minification - 5% benefit
+- Chrome priority - affects download order - hueristics based - higher in <head>, images - low, fonts - higher. Diff browser have different, also on - http 1 or 2, in 2 hints given - server decides
+- no preload - @import in css, document.write of external resource
+- initial congestion window akamai
+- css - mdeia query 
   or bundle together 
   critical css - but may need repainting and maintanence
 50K js - split each bundle - executon can start early
