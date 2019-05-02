@@ -26,8 +26,9 @@ Concepts:
  - css specific rule
  - css display none on a DOM object - means node won't be added to te render tree
  - media query on the link tag - technique to reduce render blocking css
- - javascript is parser blocking
+ - javascript is parser blocking but browser uses preload scanner
  - css is render blocking, but it blocks javascript execution as well as the browser doesn't execute javascript until the csssom has been built
  - javascript that doesn't modify DOM or CSSOM should not block rendering
  - async attribute on script allows it to not block the dom construction and also when the script has been loaded, it's execution does not wait for completion of cssom
  - For inline scripts, put these above css to stop it blocking on cssom
+ -
